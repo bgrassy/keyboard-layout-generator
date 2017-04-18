@@ -6,7 +6,6 @@ keys = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f',
         'g', 'h', 'j', 'k', 'l', ';', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.']
 fingers = [1, 2, 3, 4, 4, 5, 5, 6, 7, 8, 1, 2, 3, 4, 4, 5, 5, 6, 7, 8, 1, 2,
            3, 4, 4, 5, 5, 6, 7]
-corrections = [1, 1.043, 1.15, 1.207]
 hand = [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0,
         0, 0, 1, 1, 1, 1]
 distances = [1.9, 1.9, 1.9, 1.9, 2.5, 3, 1.9, 1.9, 1.9, 1.9, 0, 0, 0, 0, 1.9,
@@ -232,7 +231,7 @@ def genetic():
 # Takes a layout, and creates a rough image corresponding to the place
 # of the keys on the keyboard.
 def draw_image(layout):
-    im = Image.new('RGBA', (500, 200), 'white')
+    im = Image.new('RGBA', (500, 132), 'white')
     draw = ImageDraw.Draw(im)
     count = 1
     subCount = 0
@@ -245,16 +244,16 @@ def draw_image(layout):
         new_index = new_fingers.index(fingers[letter_num])
         while letter_num != index + new_index:
             new_index = new_index + 1
-        x = 50 * new_index
+        x = 15 + 50 * new_index
         draw.text((x, y), letter, fill="purple")
-    im.save("testIm.png")
+    im.save("layout.png")
 
 print("string: ")
 string = input()
 string = alphabetize(string)
 print("gen: ")
 genMax = input()
-print("Would you like to remove any characters? ")
+print("Would you like to remove any characters (leave empty if no, type characters if yes)? ")
 removed_string = input()
 if removed_string != "":
     for ch in removed_string:
@@ -269,6 +268,7 @@ for i in range(int(genMax)):
 
 print("Max: " + str(max(sums)))
 maxSum = max(sums)
+max_layout = []
 for layout in final_layouts:
     if layout_score(layout, string) == maxSum:
         max_layout = layout

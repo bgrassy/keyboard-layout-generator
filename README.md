@@ -12,4 +12,5 @@ To use, open up keyboard_generator.py, and edit the "IMAGE DIRECTORY" code to po
 
 # Blog posts:
 https://brockgrassy.com/blog/keyboard-layout-project-version-1
+
 https://brockgrassy.com/blog/keyboard-layout-project-update

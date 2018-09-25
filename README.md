@@ -11,6 +11,6 @@ To use, open up keyboard_generator.py, and edit the "IMAGE DIRECTORY" code to po
 3. Write a web application interface with more interactivity
 
 # Blog posts:
-https://brockgrassy.com/blog/keyboard-layout-project-version-1
+https://brockgrassy.com/blog/posts/keyboard-layout-project-version-1
 
-https://brockgrassy.com/blog/keyboard-layout-project-update
+https://brockgrassy.com/blog/posts/keyboard-layout-project-update
